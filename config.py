@@ -1,4 +1,8 @@
 import os
+from dotenv import load_dotenv
+
+# 🔥 .env file load karo
+load_dotenv(".env")
 
 class Config:
     # ── Telegram Credentials ──────────────────────────────
@@ -15,11 +19,9 @@ class Config:
     DATABASE_NAME = "FilestoreBot"
 
     # ── Force Subscribe Channel ───────────────────────────
-    # Set to channel ID (e.g. -1001234567890) or leave "0" to disable
     FORCE_SUB_CHANNEL = os.environ.get("FORCE_SUB_CHANNEL", "0")
 
     # ── File DB Channel ───────────────────────────────────
-    # Private channel where files are stored (bot must be admin)
     FILE_DB_CHANNEL = int(os.environ.get("FILE_DB_CHANNEL", 0))
 
     # ── Log Channel (optional) ────────────────────────────
